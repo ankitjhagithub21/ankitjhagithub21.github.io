@@ -1,23 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: "Urbanist", sans-serif; */
+    font-family: "Urbanist", sans-serif;
     font-weight: 600;
     outline: none;
 
 }
 
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-image: url("./img/ankit.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+
+   
 body {
     background-color: black;
     color: white;
 
 }
+#main{
+    background-color: rgba(0,0,0,0.3);
+}
 
-#page1 {
+.page{
     height: 100vh;
     width: 100%;
     display: flex;
@@ -25,41 +47,26 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-}
 
-#page1 img {
-    width: 250px;
-
+   
 }
 
 
-#page1 h2 {
-    font-size: 30px;
-    position: absolute;
-    bottom: 0;
-    padding: 5px;
-}
 
-#social {
+
+#social{
     position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-
-    padding: 2vw;
-
+    top: 15px;
+    right: 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3vh;
+    gap: 10px;
 }
-
-
 
 #social img {
 
-    width: 45px;
+    width: 32px;
 }
 
 #social img:hover {
@@ -68,29 +75,47 @@ body {
 }
 
 #typed {
-    font-family: "Playfair", serif;
-    color: #26cc5d;
-    font-size: 4vw;
-    text-shadow: 1px 1px 3px white;
+
+    position: fixed;
+    top: 13px;
+    left: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 24px;
+    color: rgb(57, 212, 57);
+    
 }
 
-.typed-cursor {
-    font-family: "Playfair", serif;
-    color: #20bf6b;
+
+#page2 p{
+    width: 90%;
+    margin: auto;
     font-size: 4vw;
+    font-weight: 500;
+    letter-spacing: 2px;
+    
+    padding: 4vw;
 }
+
+
 
 @media (max-width:500px) {
     #typed {
-        font-size: 8vw;
-
-    }
-
+        font-size: 20px;
+        letter-spacing: 0px;
+    }   
+    
+    
     #page1 img {
-        width: 100%;
+        width: 80%;
+        /* border-radius: 50%; */
     }
 
-    #social img {
-        width: 30px;
+    #social img{
+        width: 20px;
+    }
+    #page2 p{
+        font-size: 8vw;
     }
 }
+
