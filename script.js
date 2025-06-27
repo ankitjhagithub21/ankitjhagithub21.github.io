@@ -62,16 +62,17 @@ cursorAnimation()
 
 function page2Animation() {
   gsap.from("#intro-text span", {
-    x:-100,
+    y:100,
     opacity: 0,
     duration: 1,
     ease: "power2.out",
-    stagger: 0.1,
+    stagger: 0.2,
     scrollTrigger: {
       trigger: "#page2",
       scroller: "#main",       
       start: "top 60%",
-      scrub: 1,
+      end:"top 20%",
+      scrub:1 
     }
   });
 }

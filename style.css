@@ -11,36 +11,37 @@
 
 }
 
-html,body{
+html,
+body {
     width: 100%;
     height: 100%;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-body{
+body {
     background-image: url("./img/ankit.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;  
-    overflow: hidden;  
+    background-position: center;
+    overflow: hidden;
 }
 
-   
+
 body {
     background-color: black;
     color: white;
 
 }
 
-#main{
-    background-color: rgba(0,0,0,0.3);
+#main {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-.page{
+.page {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -48,13 +49,13 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-   
+
 }
 
 
 
 
-#social{
+#social {
     position: fixed;
     top: 15px;
     right: 20px;
@@ -84,22 +85,11 @@ body {
     letter-spacing: 2px;
     font-size: 24px;
     color: rgb(57, 212, 57);
-    
+
 }
 
 
-#page2 p{
-    width: 90%;
-    margin: auto;
-    font-size: 4vw;
-    font-weight: 500;
-    letter-spacing: 2px;
-    
-    padding: 4vw;
-}
-
-
-#crsr{
+#crsr {
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -108,22 +98,21 @@ body {
     left: 0;
     border: 1px solid white;
     z-index: 99;
+
+}
+
+#intro-text{
+    max-width: 90%;
     
 }
 
-#page3 {
-  width: 100%;
-  height: 100vh;
-}
-
-.reveal {
-  width: 100%;
-  height: 100%;
-}
-
 #intro-text span {
-  display: inline-block;
-  line-height: 1.6;
+    display: inline-block;
+    line-height: 1.6;
+    font-size: 4vw;
+    font-weight: 500;
+    
+    
 }
 
 
@@ -131,19 +120,19 @@ body {
     #typed {
         font-size: 20px;
         letter-spacing: 0px;
-    }   
-    
-    
+    }
+
+
     #page1 img {
         width: 80%;
         /* border-radius: 50%; */
     }
 
-    #social img{
+    #social img {
         width: 20px;
     }
-    #page2 p{
+
+    #page2 p {
         font-size: 8vw;
     }
 }
-
