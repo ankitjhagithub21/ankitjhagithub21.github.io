@@ -83,13 +83,15 @@ body::after {
     justify-content: end;
 }
 #home h1{
-    font-size: 4vw;
+    font-size: 40px;
     font-weight: 500;
 }
 #about span {
     font-size: 5vw;
     font-weight: 500;
     display: inline-block;
+    /* line-height: 1.2; */
+    
 }
 
 #skills{
@@ -132,6 +134,7 @@ body::after {
     }
     #about span{
         font-size: 30px;
+        line-height: 150%;
     }
     #skills h1{
         font-size: 8vw;
