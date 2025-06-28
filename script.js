@@ -1,82 +1,68 @@
 gsap.registerPlugin(ScrollTrigger);
 
-function startLocoMotive() {
-
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector("#main"),
-    smooth: true
-  });
-  
-  locoScroll.on("scroll", ScrollTrigger.update);
-
-  ScrollTrigger.scrollerProxy("#main", {
-    scrollTop(value) {
-      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    }, 
-    getBoundingClientRect() {
-      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-    },
-    
-    pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
-  });
-
-
-  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-  ScrollTrigger.refresh();
-
-}
-
-startLocoMotive()
-
 function startTyping() {
-
-  const typed = new Typed('#typed', {
-    strings: ['Full Stack Developer', "Open Source Contributor", 'Freelancer'],
-    typeSpeed: 60,
-    loop: true,
-    cursorChar: ''
-  });
-
+    new Typed('#typed', {
+        strings: ['Full Stack Developer', "Open Source Contributor", 'Freelancer'],
+        typeSpeed: 60,
+        loop: true,
+        cursorChar: ''
+    });
 
 }
 
 startTyping()
 
-
-function cursorAnimation() {
-
-
-  document.querySelector('#main').addEventListener('mousemove', (e) => {
-      gsap.to('#crsr',{
-        x:e.clientX-15,
-        y:e.clientY-15
-      })
-  });
+function aboutPageAnimation() {
+    gsap.from("#about span", {
+        y: 100,
+        x: -100,
+        opacity: 0,                // Fully transparent
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.2,              // Delay between each span
+        scrollTrigger: {
+            trigger: "#about",       // Element to trigger animation
+            scroller: "body",        // Use body as scroller
+            start: "top 80%",        // When the top of #about hits 80% of viewport
+            end: "top 10%",          // Optional: when to end
+            scrub: 1         // Show start/end markers for debugging
+        }
+    });
 }
 
+aboutPageAnimation();
 
-cursorAnimation()
+function skillAnimation() {
 
+    gsap.to("#progress", {
+        width: "100%",
+        duration: 2,
+        scrollTrigger: {
+            trigger: "#skills",
+            scroller: "body",
+            start: "top 100%",
+            end: "top 30%",
+            scrub: 1,
+            // markers:true
+        }
+    });
 
-function page2Animation() {
-  gsap.from("#intro-text span", {
-    y:100,
-    opacity: 0,
-    duration: 1,
-    ease: "power2.out",
-    stagger: 0.2,
-    scrollTrigger: {
-      trigger: "#page2",
-      scroller: "#main",       
-      start: "top 60%",
-      end:"top 20%",
-      scrub:1 
-    }
-  });
+    gsap.from(".skill", {
+
+        opacity: 0,
+        scale: 0,
+        duration: 1.5,
+        stagger: 0.3,
+        ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#skills",
+            scroller: "body",
+            start: "top 80%",
+            end: "top 20%",
+            scrub: 1,
+            // markers:true
+        }
+    });
 }
 
-
-page2Animation()
-
+skillAnimation()
